@@ -51,6 +51,10 @@ npm run dev                  # http://localhost:3000
 npm test                     # core logic tests, no keys needed
 ```
 
+Or deploy your own copy on Render with the included blueprint (`render.yaml`, free plan). Render asks for `ANTHROPIC_API_KEY` during setup.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/xpdlf1004/charge-desk)
+
 `PAYPAL_MODE=mock` (default) uses a built-in demo store, so no PayPal account is needed. `PAYPAL_MODE=sandbox` reads a real PayPal sandbox merchant account (add `PAYPAL_CLIENT_ID` and `PAYPAL_CLIENT_SECRET`, with Transaction Search enabled on the app).
 
 ## License
