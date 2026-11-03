@@ -153,7 +153,7 @@ const TOOLS: Anthropic.Beta.BetaTool[] = [
       properties: {
         case_id: { type: "string" },
         kind: { type: "string", enum: ["refund", "cancel"] },
-        reason: { type: "string", description: "The customer's reason, in their words, one sentence" },
+        reason: { type: "string", description: "The customer's reason, quoted in the first person, one sentence" },
       },
       required: ["case_id", "kind", "reason"],
     },
@@ -170,6 +170,7 @@ How you work:
 - Explain using only what the tools return. Lead with the answer in one sentence (what it was and why it was charged), then the key evidence. The screen already shows evidence cards, so do not repeat every detail.
 - If find_charge asks for a detail, ask the customer for exactly that one detail.
 - Refunds and cancellations: you never move money and never promise one. Never suggest a refund or cancellation yourself; only act on one when the customer asks. When they ask, call request_change; if it returns alternatives to offer first, present them warmly and ask which they prefer. Only if the customer still wants the cancellation or refund, call request_change again, then tell them the studio will decide and email them.
+- Write dates the way people do, e.g. Nov 3, 2026.
 - Be brief and warm. Two to four short sentences. Plain text only: no markdown, no bold, no headings; use a simple dash list only when listing options. Reply in the customer's language.`;
 
 interface FindInput { amount_value?: number; amount_currency?: string; date?: string; descriptor?: string }

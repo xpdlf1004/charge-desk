@@ -127,7 +127,7 @@ function compareAmount(quoted: Money, paid: Money, opts: MatchOptions): { kind: 
   if (!near(q, expected, opts.fxTolerance)) return null;
   return {
     kind: "fx",
-    detail: `${paidText} × ${rate} ≈ ${quoted.currency} ${Math.round(expected).toLocaleString("en-US")}; your card converted it (within ±${opts.fxTolerance * 100}% for card FX fees)`,
+    detail: `${paidText} × ${rate} ≈ ${quoted.currency} ${Math.round(expected).toLocaleString("en-US")} after the card's FX conversion (within ±${opts.fxTolerance * 100}%)`,
   };
 }
 

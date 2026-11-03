@@ -50,7 +50,7 @@ export function Dashboard() {
       <div className="merchant-head">
         <div>
           <h1>Charge questions</h1>
-          <p>Customers who asked about a charge, and what the desk did.</p>
+          <p>Customers who asked about a charge, and what Charge Desk did.</p>
         </div>
         <button type="button" className="btn quiet" onClick={async () => { await fetch("/api/demo/reset", { method: "POST" }); setProof({}); await load(); }}>
           Reset demo
@@ -61,7 +61,7 @@ export function Dashboard() {
         <div><b><CountUp value={m.inquiries} /></b><span>questions answered</span></div>
         <div><b><CountUp value={m.explained} /></b><span>settled by an explanation</span></div>
         <div><b>{m.keptRevenue.length ? m.keptRevenue.map((k) => <MoneyUp key={k.currency} money={k} />) : "USD 0.00"}</b><span>sales kept, nothing refunded</span></div>
-        <div><b><MoneyUp money={m.feesAtStake} /></b><span>dispute fees avoided (at {fmtMoney({ currency: m.feesAtStake.currency, value: 15 })} each)</span></div>
+        <div><b><MoneyUp money={m.feesAtStake} /></b><span>dispute fees at stake ({fmtMoney({ currency: m.feesAtStake.currency, value: 15 })} each)</span></div>
       </section>
 
       <section>

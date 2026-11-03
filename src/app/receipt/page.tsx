@@ -28,7 +28,7 @@ export default function ReceiptPage() {
           <p>On your card statement this shows as <span className="statement-text">PAYPAL * Brightleaf St</span>. Cards in other currencies show the converted amount.</p>
           <div className="mail-help">
             <Link href="/help?from=receipt">Questions about this charge?</Link>
-            <p>Ask us and get an answer right away, with your payment details.</p>
+            <p>Ask us and get an answer right away, with the details of what you paid for.</p>
           </div>
         </div>
       </article>

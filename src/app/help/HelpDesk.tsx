@@ -190,7 +190,7 @@ function Panel({ card, requestStatus }: { card?: PanelCard; requestStatus: Recor
   if (!card) {
     return (
       <div className="panel-empty">
-        <h2>Not sure what a charge is?</h2>
+        <h2>Don't recognize a charge?</h2>
         <p>Tell us what you see on your statement. Once you confirm your email, we'll show the payment it matches and why it was charged.</p>
       </div>
     );

@@ -51,7 +51,7 @@ export function buildRequest(
       ? `Already offered: ${offeredAlternatives.join("; ")} — customer declined`
       : "No alternatives were configured to offer",
     `How we matched it: ${match.evidence.filter((e) => e.strength === "strong").map((e) => e.detail).join(" · ") || "see evidence"}`,
-    `If declined, the customer may dispute it with their card issuer: you would return ${fmt(tx.amount)} and pay about ${fmt(disputeFee)} in fees.`,
+    `If declined, the customer may dispute it with their card issuer: if that dispute is lost you could return ${fmt(tx.amount)} and pay about ${fmt(disputeFee)} in fees.`,
   ];
   return {
     kind,
