@@ -1,0 +1,24 @@
+# Render Blueprint: one long-running Node service (the desk keeps verification and cases in memory).
+services:
+  - type: web
+    name: charge-desk
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start -- -p $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: PAYPAL_MODE
+        value: mock # set to "sandbox" and add the PayPal keys to use a real sandbox merchant
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DAILY_BUDGET_USD
+        value: "3" # the chat stops for the day once AI spend reaches this
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
