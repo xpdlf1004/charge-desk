@@ -8,6 +8,8 @@ Charge Desk is an AI agent a PayPal merchant puts on its own site and receipt em
 
 ## Try it
 
+Live demo: **https://charge-desk.onrender.com** (free instance; the first load after a quiet spell can take about a minute, and demo data resets when it restarts).
+
 | Step | Where | What to do |
 | --- | --- | --- |
 | 1 | `/receipt` | The receipt email. Click **Questions about this charge?** |
